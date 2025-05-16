@@ -1,0 +1,270 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "username": "jane_smith",
+      "email": "jane@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "7b6c",
+      "username": "neelima",
+      "email": "neelima@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2279",
+      "username": "neelima_alt",
+      "email": "neelima@gmai.com",
+      "password": "12345"
+    },
+    {
+      "id": "1744306396849",
+      "username": "hamsini",
+      "email": "hamsini@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "1744357083912",
+      "username": "vamsi",
+      "email": "vamsi@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "1744863763644",
+      "username": "hema",
+      "email": "hema@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "1745825274502",
+      "username": "sharath",
+      "email": "sharath@gmail.com",
+      "password": "Ironman@1"
+    },
+    {
+      "id": "1745825485429",
+      "username": "tony",
+      "email": "tony@gmail.com",
+      "password": "sharath123"
+    },
+    {
+      "id": "1747111504031",
+      "username": "alena",
+      "email": "alena@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "1747375159336",
+      "username": "sharath",
+      "email": "sharath1@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": 1747398333942,
+      "username": "Guest",
+      "email": "Guest@gmail.com",
+      "password": "123456789"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "userId": "1",
+      "username": "john_doe",
+      "title": "HCU Deforestation Protest",
+      "description": "Students from HCU are standing against massive deforestation in the city outskirts. 🌳✊.The University of Hyderabad has been at the center of a major controversy due to the Telangana government's plan to auction 400 acres of forested land near the university campus for IT and infrastructure projects. This land, known as Kancha Gachibowli, is considered ecologically important and known as the 'lungs of Hyderabad'. The government's decision led to widespread protests, with students, environmentalists, and citizens opposing the deforestation",
+      "image": "https://media.licdn.com/dms/image/v2/D5622AQEzMYGp5rzD2g/feedshare-shrink_800/B56ZX0q4jeGoAg-/0/1743566650520?e=2147483647&v=beta&t=nCvTRX2CY6Lcho9p7b5Oob9p7PzbS5sYg9sRAhl8wo4",
+      "filterType": "environment",
+      "likes": 7,
+      "likedBy": [
+        "2",
+        "7b6c",
+        1747375159336
+      ],
+      "comments": [
+        {
+          "username": "jane_smith",
+          "text": "This is very concerning!"
+        },
+        {
+          "username": "neelima",
+          "text": "stop deforestation"
+        },
+        {
+          "username": "tony",
+          "text": "omg"
+        },
+        {
+          "username": "neelima",
+          "text": "Students from HCU are standing against massive deforestation in the city outskirts"
+        },
+        {
+          "username": "neelima",
+          "text": ""
+        },
+        {
+          "username": "sharath",
+          "text": "stop deforestartion "
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "username": "jane_smith",
+      "title": "AI Tools on the Rise",
+      "description": "From ChatGPT to Midjourney, AI is revolutionizing creative industries. 🤖.AI tools are rapidly growing in popularity and are being used across various industries to automate processes, analyze data, and simulate human intelligence. This surge is driven by advancements in computing power and the increasing availability of data, allowing AI algorithms to learn and improve rapidly",
+      "image": "https://images.ortmoragency.com/blogs/31cdf533-88f6-48aa-a0ac-275aaa40e441.jpeg",
+      "filterType": "technology",
+      "likes": 10,
+      "likedBy": [
+        "1"
+      ],
+      "comments": [
+        {
+          "username": "john_doe",
+          "text": "AI is changing everything!"
+        },
+        {
+          "username": "neelima",
+          "text": "yes"
+        },
+        {
+          "username": "neelima",
+          "text": "AI tools are rapidly growing in popularity and are being used across various industries"
+        }
+      ]
+    },
+    {
+      "id": "1dd2",
+      "userId": "7b6c",
+      "username": "neelima",
+      "title": "Moon Mission 2025",
+      "description": "ISRO is preparing for a lunar mission in 2025! Here's what we know so far. 🌕🚀India's Chandrayaan program consists of several successful and ongoing lunar missions. Chandrayaan-1 (2008) mapped the Moon's surface, and Chandrayaan-2 (2019) sent an orbiter that continues to send high-resolution images. Chandrayaan-3 (2023) successfully soft-landed near the Moon's south pole, making India the fourth country to achieve this feat. Future missions like Chandrayaan-4 (2027) aim to collect lunar samples and Chandrayaan-5 is also approved. ",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfU_QM_DdifUgM1HJp12y1x2jr6w5OfwaXKQ&s",
+      "filterType": "education",
+      "likes": 1,
+      "likedBy": [
+        1745825485429
+      ],
+      "comments": [
+        {
+          "username": "neelima",
+          "text": "India's Chandrayaan program consists of several successful and ongoing lunar missions"
+        }
+      ]
+    },
+    {
+      "id": "2a9b",
+      "userId": "7b6c",
+      "username": "neelima",
+      "title": "AI Glasses by VisionTech",
+      "description": "New AI-powered smart glasses just dropped! Real-time translation and health tracking included. 🕶️🤖While 'VisionTech AI Glasses' is not a specific product with readily available reviews, the search results provide a comprehensive overview of the landscape of AI-powered smart glasses and related technologies.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfGhSyJ1EKVM1HEF_ybHjG0I9u68gElA02fQ&s",
+      "filterType": "technology",
+      "likes": 1,
+      "likedBy": [
+        1747375159336
+      ],
+      "comments": []
+    },
+    {
+      "id": "3xy4",
+      "userId": "7b6c",
+      "username": "neelima",
+      "title": "Hyderabad Deforestation Protest 🌳",
+      "description": "Students from HCU and other universities protest against deforestation in the city outskirts.It appears there was a significant deforestation protest in Hyderabad concerning a 400-acre urban 'forest' in the Kancha Gachibowli area, near the University of Hyderabad (HCU). This occurred around late March and early April 2025 #SaveForests",
+      "image": "https://images.bhaskarassets.com/web2images/1884/2025/04/01/img3524_1743516646.jpeg",
+      "filterType": "environment",
+      "likes": 1,
+      "likedBy": [
+        1747375159336
+      ],
+      "comments": [
+        {
+          "username": "neelima",
+          "text": "Students from HCU and other universities protest against deforestation in the city outskirts"
+        }
+      ]
+    },
+    {
+      "id": "4k1z",
+      "userId": "7b6c",
+      "username": "neelima",
+      "title": "Summer Street Style 2025",
+      "description": "Flowy shirts, cargo skirts, and sustainable sandals are ruling summer fashion this year. Summer Street Style 2025 is all about embracing comfort without sacrificing style. It's about mixing elevated basics with statement retro pieces and incorporating thoughtful details. In Hyderabad, expect to see these global trends adapted with a focus on staying cool and comfortable in the local climate, potentially blending them with contemporary takes on traditional silhouettes.☀️👕",
+      "image": "https://i.ytimg.com/vi/5gTNbhKXclI/maxresdefault.jpg",
+      "filterType": "fashion",
+      "likes": 2,
+      "likedBy": [
+        "7b6c",
+        "1747375159336"
+      ],
+      "comments": [
+        {
+          "username": "neelima",
+          "text": "sustainable sandals are ruling summer fashion this year"
+        }
+      ]
+    },
+    {
+      "id": "5mj2",
+      "userId": "7b6c",
+      "username": "neelima",
+      "title": "TechLayoff Tracker: April 2024",
+      "description": "Several tech companies announced job cuts this month. See who’s affected. 📉💻In summary, April 2024 was a month with significant job losses in the tech industry, continuing a trend observed throughout the year. Major companies across various sectors of technology implemented workforce reductions for a variety of strategic and economic reasons.",
+      "image": "https://images.moneycontrol.com/static-mcnews/2024/01/tech-layoffs-in-2024-R.jpg",
+      "filterType": "news",
+      "likes": 0,
+      "likedBy": [],
+      "comments": []
+    },
+    {
+      "id": "1be7",
+      "userId": "1744357083912",
+      "username": "vamsi",
+      "title": "mern stack",
+      "description": "very huge potential skill to earn more.the MERN stack is a powerful and versatile choice for building modern web applications, especially for developers comfortable with JavaScript. Its benefits in terms of unified development, scalability, and a rich ecosystem make it a popular option for a wide range of projects. However, it's essential to consider its limitations based on the specific requirements of your application.",
+      "image": "https://tse1.mm.bing.net/th?id=OIP._ggMNrZ2kucjAv4h-hVo8wHaEK&pid=Api&P=0&h=180",
+      "filterType": "technology",
+      "likes": 1,
+      "likedBy": [
+        "1744357083912"
+      ],
+      "comments": [
+        {
+          "username": "vamsi",
+          "text": "ghaha"
+        }
+      ]
+    },
+    {
+      "id": "1347",
+      "title": "Markup language ",
+      "description": "A markup language is a text-encoding system which specifies the structure and formatting of a document and potentially the relationships among its parts.[1] Markup can control the display of a document or enrich its content to facilitate automated processing.\n\nA markup language is a set of rules governing what markup information may be included in a document and how it is combined with the content of the document in a way to facilitate use by humans and computer programs. The idea and terminology evolved from the \"marking up\" of paper manuscripts (e.g., with revision instructions by editors), traditionally written with a red pen or blue pencil on authors' manuscripts.[2]\n\nOlder markup languages, which typically focus on typography and presentation, include Troff, TeX, and LaTeX. Scribe and most modern markup languages, such as XML, identify document components (for example headings, paragraphs, and tables), with the expectation that technology, such as stylesheets, will be used to apply formatting or other processing.[citation needed]\n\nSome markup languages, such as the widely used HTML, have pre-defined presentation semantics, meaning that their specifications prescribe some aspects of how to present the structured data on particular media. HTML, like DocBook, Open eBook, JATS, and many others, is based on the markup metalanguages SGML and XML. That is, SGML and XML allow designers to specify particular schemas, which determine which elements, attributes, and other features are permitted, and where.[3]\n\nA key characteristic of most markup languages is that they allow intermingling markup with document content such as text and pictures. For example, if a few words in a sentence need to be emphasized, or identified as a proper name, defined term, or another special item, the markup may be inserted between the characters of the sentence",
+      "image": "https://wpamelia.com/wp-content/uploads/2019/06/markup.jpg",
+      "userId": 1745825485429,
+      "username": "tony",
+      "likes": 0,
+      "likedBy": [],
+      "comments": [
+        {
+          "username": "alena",
+          "text": "j"
+        },
+        {
+          "username": "neelima",
+          "text": "Markup can control the display of a document or enrich its content to facilitate automated processing."
+        }
+      ],
+      "filterType": "technology"
+    }
+  ]
+}

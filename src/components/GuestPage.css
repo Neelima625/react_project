@@ -1,0 +1,228 @@
+/* Container for the entire guest page */
+.guest-container {
+  padding: 20px;
+ 
+  margin: 0% 4%;
+}
+
+/* Grid layout for posts */
+.guest-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Post card styles */
+.guest-post-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  padding-bottom: 10px; /* Added to avoid action buttons covering description */
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  padding-bottom: 30px;
+}
+
+/* Hover effect for post card */
+.guest-post-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Post image */
+.guest-post-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Post title */
+.guest-post-title {
+  font-size: 1.2rem;
+  margin: 10px 0 6px;
+  color: #333;
+}
+
+/* Description text */
+.guest-post-description {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* Toggle for "Show more/less" */
+.toggle-description {
+  display: inline-block;
+  margin-left: 6px;
+  color: #007bff;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.toggle-description:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Post actions (Like/Comment) */
+.guest-post-actions {
+  margin-top: auto;
+  background-color: #b5d0f2;
+  padding: 10px 16px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 8px;
+  gap: 12px;
+}
+
+/* Icon group */
+.guest-icon-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-button {
+  color: gray;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.icon-button:hover {
+  color: #dc3545;
+}
+
+/* Comment display area (optional if used later) */
+.guest-comments {
+  margin-top: 12px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.guest-comments h5 {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.guest-comments ul {
+  list-style-type: disc;
+  padding-left: 18px;
+  margin: 0;
+}
+
+.guest-comments li {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Comment button */
+.comment-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.comment-button:hover {
+  background-color: #0056b3;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #213555;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+
+
+/* Navbar buttons */
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  padding: 0.5rem 1.2rem;
+  background-color: white;
+  color: #1d1c1c;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #81a4dd;
+  color: black;
+}
+
+/* Loading/Error messages */
+.status-message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.2rem;
+}
+
+.status-message.error {
+  color: red;
+}
+
+/* Responsive media queries */
+@media (max-width: 600px) {
+  .guest-post-card {
+    padding: 12px;
+    padding-bottom: 60px;
+  }
+
+  .guest-post-title {
+    font-size: 1rem;
+  }
+
+  .guest-post-description {
+    font-size: 0.9rem;
+  }
+
+  .guest-post-image {
+    height: 180px;
+  }
+
+  .nav-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+ @media (max-width: 500px) {
+  .navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+ }
