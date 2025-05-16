@@ -78,7 +78,7 @@ const Signup = ({ setCurrentUser }) => {
         <button type="submit">Sign Up</button>
       </form>
       <p className="auth-switch">
-        Already have an account? <Link to="/login">Login</Link>
+        continue as guest? <Link to="/guest">click here</Link>
       </p>
     </div>
     <Footer></Footer></>

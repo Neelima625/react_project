@@ -101,6 +101,7 @@ html, body {
   gap: 1.5rem;
   padding: 0 2rem 4rem;
   margin: 0% 5% ;
+  justify-content: center;
 }
 
 /* ---------- No Posts Message ---------- */

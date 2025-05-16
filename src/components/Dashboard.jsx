@@ -1,4 +1,3 @@
-// Dashboard.js
 import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 import AddPost from './AddPost';
@@ -8,7 +7,7 @@ import { faHeart, faComment } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate, Link } from 'react-router-dom';
 import Footer from './Footer';
 
-const Dashboard = ({ currentUser, setCurrentUser }) => {
+const Dashboard = ({ currentUser }) => {
   const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useState('all');
   const [showAddForm, setShowAddForm] = useState(false);
@@ -16,11 +15,9 @@ const Dashboard = ({ currentUser, setCurrentUser }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch posts from JSON server
     fetch('http://localhost:4000/posts')
       .then(res => res.json())
-      .then(data => setPosts(data))
-      .catch(err => console.error('Failed to fetch posts:', err));
+      .then(data => setPosts(data));
   }, []);
 
   const handlePostAdded = (newPost) => {
@@ -29,11 +26,6 @@ const Dashboard = ({ currentUser, setCurrentUser }) => {
   };
 
   const handleLike = async (postId) => {
-    if (!currentUser) {
-      alert('Please login to like posts.');
-      return;
-    }
-
     const post = posts.find(p => p.id === postId);
     const hasLiked = post.likedBy?.includes(currentUser.id);
 
@@ -45,12 +37,8 @@ const Dashboard = ({ currentUser, setCurrentUser }) => {
         : [...(post.likedBy || []), currentUser.id]
     };
 
-    try {
-      await axios.put(`http://localhost:4000/posts/${postId}`, updatedPost);
-      setPosts(posts.map(p => p.id === postId ? updatedPost : p));
-    } catch (error) {
-      console.error('Error updating likes:', error);
-    }
+    await axios.put(`http://localhost:4000/posts/${postId}`, updatedPost);
+    setPosts(posts.map(p => (p.id === postId ? updatedPost : p)));
   };
 
   const toggleDescription = (postId) => {
@@ -61,16 +49,10 @@ const Dashboard = ({ currentUser, setCurrentUser }) => {
   };
 
   const handleFilter = (type) => setFilter(type);
+  const handleLogout = () => navigate('/');
 
-  const handleLogout = () => {
-    localStorage.removeItem('trendtroveUser');
-    setCurrentUser(null);
-    navigate('/');
-  };
-
-  // Filter posts based on filter state
   let filteredPosts = posts;
-  if (filter === 'my-posts' && currentUser) {
+  if (filter === 'my-posts') {
     filteredPosts = posts.filter(post => post.userId === currentUser.id);
   } else if (['lifestyle', 'technology', 'fashion', 'environment', 'news'].includes(filter)) {
     filteredPosts = posts.filter(post => post.filterType === filter);
@@ -78,68 +60,56 @@ const Dashboard = ({ currentUser, setCurrentUser }) => {
 
   return (
     <div className="dashboard-wrapper">
-         <nav className="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm px-4 py-3">
+     <nav className="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm px-4 py-3">
 
-             <div className="d-flex justify-content-between align-items-center w-100">
-               <Link to="/dashboard" className="navbar-brand logo-img m-0">
-                 <img src="/image1.png" width={200} alt="Logo" className="navbar-logo" />
-               </Link>
-               <button
-                 className="navbar-toggler"
-                 type="button"
-                 data-bs-toggle="collapse"
-                 data-bs-target="#navbarContent"
-                 aria-controls="navbarContent"
-                 aria-expanded="false"
-                 aria-label="Toggle navigation"
-               >
-                 <span className="navbar-toggler-icon"></span>
-               </button>
-             </div>
-     
-             <div className="collapse navbar-collapse justify-content-end mt-3 mt-lg-0" id="navbarContent">
-               <ul className="navbar-nav gap-2">
-                 <li className="nav-item">
-                   <Link to="/dashboard">
-                     <button className="btn btn-outline-light">All Posts</button>
-                   </Link>
-                 </li>
-                 <li className="nav-item">
-                   <Link to="/dashboard">
-                     <button className="btn btn-outline-light">My Posts</button>
-                   </Link>
-                 </li>
-                 <li className="nav-item">
-                   <Link to="/dashboard">
-                     <button className="btn btn-outline-light">+ Add Post</button>
-                   </Link>
-                 </li>
-                 <li className="nav-item dropdown">
-                   <button className="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">
-                     Filter
-                   </button>
-                   <ul className="dropdown-menu">
-                     {["lifestyle", "technology", "fashion", "environment", "news", "all"].map(type => (
-                       <li key={type}>
-                         <Link to="/dashboard">
-                           <button className="dropdown-item">{type.charAt(0).toUpperCase() + type.slice(1)}</button>
-                         </Link>
-                       </li>
-                     ))}
-                   </ul>
-                 </li>
-                 <li className="nav-item">
-                   <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
-                 </li>
-               </ul>
-             </div>
-           </nav>
+        <Link className="navbar-brand logo-img" to="/">
+          <img src="image1.png" width={200} alt="Trend Trove" />
+        </Link>
 
-      <h2 className="text-center my-4">Welcome, {currentUser?.username} 👋</h2>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse justify-content-end" id="navbarContent">
+          <ul className="navbar-nav gap-2">
+            <li className="nav-item">
+              <button className="btn btn-outline-light" onClick={() => handleFilter('all')}>All Posts</button>
+            </li>
+            <li className="nav-item">
+              <button className="btn btn-outline-light" onClick={() => handleFilter('my-posts')}>My Posts</button>
+            </li>
+            <li className="nav-item">
+              <button className="btn btn-outline-light" onClick={() => setShowAddForm(!showAddForm)}>+ Add Post</button>
+            </li>
+            <li className="nav-item dropdown">
+              <button className="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">Filter</button>
+              <ul className="dropdown-menu">
+                {['lifestyle', 'technology', 'fashion', 'environment', 'news', 'all'].map(type => (
+                  <li key={type}>
+                    <button className="dropdown-item" onClick={() => handleFilter(type)}>
+                      {type.charAt(0).toUpperCase() + type.slice(1)}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li className="nav-item">
+              <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <h2 className="text-center my-4">Welcome, {currentUser.username} 👋</h2>
 
       {showAddForm && (
         <div className="add-post-overlay" onClick={() => setShowAddForm(false)}>
-          <div className="add-post-popup" onClick={e => e.stopPropagation()}>
+          <div className="add-post-popup" onClick={(e) => e.stopPropagation()}>
             <AddPost currentUser={currentUser} onPostAdded={handlePostAdded} />
           </div>
         </div>
@@ -150,7 +120,7 @@ const Dashboard = ({ currentUser, setCurrentUser }) => {
           <p className="no-posts-message">No posts to display.</p>
         ) : (
           filteredPosts.map(post => {
-            const liked = post.likedBy?.includes(currentUser?.id);
+            const liked = post.likedBy?.includes(currentUser.id);
             const showFull = expandedPosts[post.id];
 
             return (
@@ -171,7 +141,7 @@ const Dashboard = ({ currentUser, setCurrentUser }) => {
                         className="toggle-description"
                         onClick={() => toggleDescription(post.id)}
                       >
-                        {showFull ? 'Show less' : 'Show more'}
+                        {showFull ? ' Show less' : ' Show more'}
                       </span>
                     )}
                   </p>
